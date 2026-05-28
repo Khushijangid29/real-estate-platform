@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Platform - Find Your Dream Property</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span>🏠</span> Real Estate Pro
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button onclick="showLoginModal()">Login</button>
+                <button onclick="showRegisterModal()">Register</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find Your Perfect Property</h1>
+        <p>Browse thousands of properties and find your dream home today</p>
+        <div class="search-bar">
+            <input type="text" id="city" placeholder="City" class="search-input">
+            <input type="number" id="priceMin" placeholder="Min Price" class="search-input">
+            <input type="number" id="priceMax" placeholder="Max Price" class="search-input">
+            <select id="bedrooms" class="search-input">
+                <option value="">Bedrooms</option>
+                <option value="1">1 Bedroom</option>
+                <option value="2">2 Bedrooms</option>
+                <option value="3">3 Bedrooms</option>
+                <option value="4">4+ Bedrooms</option>
+            </select>
+            <button onclick="filterProperties()" class="search-btn">Search</button>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section class="featured-section">
+        <h2>Featured Properties</h2>
+        <div class="properties-grid" id="propertiesGrid">
+            <!-- Properties will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Special Offers Popup -->
+    <div class="offer-popup" id="offerPopup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closeOfferPopup()">×</button>
+            <div id="offerContent"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeLoginModal()">×</button>
+            <h2>Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeRegisterModal()">×</button>
+            <h2>Register</h2>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="registerPhone">
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Real Estate Platform. All rights reserved.</p>
+            <div class="visitor-counter">
+                Visitors Today: <span id="visitorCount">0</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/properties.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/inspector-disable.js"></script>
+</body>
+</html>
